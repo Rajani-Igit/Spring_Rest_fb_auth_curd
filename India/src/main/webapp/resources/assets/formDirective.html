@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+  
+  <div class="container" style=" position: absolute; top: 191px;left: 366px;">
+                <form>
+                    <div class="form-group">
+                        <label for="usr">First name:</label>
+                        <input type="text"  placeholder="Enter First Name" class="form-control" style="width: 50%;" ng-model="fname">
+                    </div>
+                    <div class="form-group">
+                        <label for="usr">Last Name:</label>
+                        <input type="text" placeholder="Enter Last Name" class="form-control" style="width: 50%;" ng-model="lname">
+                    </div>
+                    <div class="form-group">
+                        <label for="usr">MobileNo:</label>
+                        <input type="text" placeholder="Enter Last Name" class="form-control" style="width: 50%;" ng-model="mobile">
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">Email:</label>
+                        <input type="text" placeholder="Enter Email" style="width: 50%;" class="form-control" ng-model="email">
+                    </div>
+                     <div class="form-group">
+                        <label for="pwd">Password:</label>
+                        <input type="password" placeholder="Enter Pasword" style="width: 50%;" class="form-control" ng-model="password">
+                    </div>
+                     <div class="form-group">
+                        <label for="pwd">Zip:</label>
+                        <input type="text" placeholder="Enter Zipcode" style="width: 50%;" class="form-control" ng-model="zip">
+                    </div>
+                    
+                    <div ng-repeat="gender in genders">
+
+                        <div>
+                            <label>
+                                <input ng-model="$parent.selectedlang" value="{{gender}}" name="languageradiobtn" type="radio"> <span> {{gender}} </span>
+
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-05">
+                            <label for="sel1">Select State:</label>
+                            <select name="singleSelect" id="singleSelect" style="width: 25%;" class="form-control" ng-model="selectestate">
+                                <option value="">---Please select---</option>
+                                <option ng-repeat="state in states" value="{{state}}">{{state}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn btn-success" ng-click="submit()">Submit</button>
+                </form>
+                
+            </div>
+    
+
+</body>
+</html>

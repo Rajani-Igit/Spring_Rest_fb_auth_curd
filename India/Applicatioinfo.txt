@@ -1,0 +1,85 @@
+SQL SCRIPT
+------------
+CREATE TABLE `test`.`user_tbl` (
+  `USER_ID` INT NOT NULL AUTO_INCREMENT,
+  `USER_FNAME` VARCHAR(45) NULL,
+  `USER_LNAME` VARCHAR(45) NULL,
+  `GENDER` VARCHAR(45) NULL,
+  `ZIP` VARCHAR(45) NULL,
+  `MOBILE` VARCHAR(45) NULL,
+  `EMAIL` VARCHAR(45) NOT NULL,
+  `PASSWORD` VARCHAR(45) NULL,
+  UNIQUE INDEX `USER_ID_UNIQUE` (`USER_ID` ASC),
+  PRIMARY KEY (`EMAIL`));
+  
+  
+  
+  
+  $http({
+    method: 'POST',
+    url: url,
+    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+    data: 'username='+$scope.userName+'&password='+$scope.password
+}).success(function () {});
+
+
+
+http.post("add.do", data, {headers: { 'Content-Type': 'application/json'}})
+						.then(function(success) {
+							
+						}, function(error) {
+							
+						});
+
+http.get('finduser.do',{
+		        params: { email:searchattribute
+		        }
+		     }).then(function(success){
+
+		    },function(){
+		        alert("error");
+		    });
+	}
+	
+	
+	
+	
+	
+		
+		
+		http({
+    method: 'POST',
+    url: 'dummy.do',
+      data:data,  // For post binding data to direct Object
+      params:{fname: "Rajani"},  //both get and post  to acces as 
+    headers: {
+        'Content-Type': 'application/json'
+    }
+}).then(function(response) {
+    alert("Success")
+}, function() {
+    alert("Eror occured")
+});
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+  var data = {
+		  user_id:user.id
+		 };
+
+   var config = {
+				 params: data,
+				 headers : {'Accept' : 'application/json'}
+				};				
+
+				$http.get(user.details_path, config).then(function(response) {
+				   // process response here..
+				 }, function(response) {
+				});

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.1.xsd">
+<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+<property name="url" value="jdbc:mysql://localhost:3306/test"/>
+<property name="username" value="root"/>
+<property name="password" value="root"/>
+</bean>
+<bean id="npJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+<constructor-arg ref="dataSource"></constructor-arg>
+</bean>
+<bean id="mail" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+<property name="username" value="Sender mail id"/>
+<property name="password" value="Sender password"/>
+<property name="port" value="587"/>
+<property name="host" value="smtp.gmail.com"/>
+<property name="protocol" value="smtp"/>
+<property name="javaMailProperties">
+<props>
+        <prop key="mail.smtp.auth">true</prop>
+        <prop key="mail.smtp.starttls.enable">true</prop>
+	</props>
+</property>
+</bean>
+</beans>

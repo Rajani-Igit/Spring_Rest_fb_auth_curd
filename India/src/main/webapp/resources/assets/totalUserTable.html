@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="row">
+<div class="col-sm-8">
+    <div class="form-group">
+                      
+                        <input type="text"  placeholder="Search User" class="form-control" style="width: 25%;" ng-model="attribute">
+                    </div>
+                    </div>
+                    <div class="col-sm-4">
+                    <button class="btn btn-success" ng-click="fetchNextPage()" style="
+
+">Next Page</button>
+ <button class="btn btn-success" ng-click="fetchPreviousPage()"  style="
+  
+">Previous Page</button>
+ <button class="btn btn-danger" ng-click="excelGenerationFunc()"  style="
+
+">Download as Excel</button>
+</div>
+</div>
+<table  id="usertbl" class="table table-hover table-bordered" style="
+ position: relative;
+">
+
+  <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>gender</th>
+        <th>state</th>
+        <th>zip</th>
+        <th>email</th>
+        <th>mobile</th>
+         <th>Delete</th>
+      </tr>
+     
+  <tr ng-repeat="x in users | filter:attribute">
+    <td>{{ x.fName }}</td>
+    <td>{{ x.lName }}</td>
+    <td>{{ x.gender }}</td>
+    <td>{{ x.state }}</td>
+    <td>{{ x.zip }}</td>
+    <td>{{ x.email }}</td>
+    <td>{{ x.mobile }}</td>
+    <td><button class="btn btn-danger" ng-click="clickFunc(x.email)">Delete Customer</button></td>
+  </tr>
+   
+</table>
+
+</body>
+</html>
